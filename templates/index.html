@@ -48,22 +48,23 @@
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/developer">Developer</a>
+                        <a class="nav-link" href="/developer">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog">Blog</a>
-                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="/Login_signup.html">Login</a>
+                    </li>-->
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+    
+                    <button class="btn btn-outline-success" type="submit">Refresh</button>
                 </form>
             </div>
         </div>
     </nav>
 
     <!-- main form of page -->
-    <h1 class="mt-4 my-4 text-center text-green">Health Care Center</h1>
+    <h1 style="text-align:center;font-size:3em;font-family:'Roboto',sans-serif;cursor:pointer;color:#3f0788;" onmouseover="this.style.color='green';"><span style="font-size:2em;">H</span><span style="font-size:1.5em;">ealth </span><span style="font-size:2em;">N</span>avigator</h1>
+
     <div class="container my-4 mt-4" style="background: black; color: white; border-radius: 15px; padding: 40px;">
         <form action="/predict" method="post">
             <div class="form-group">
@@ -86,6 +87,11 @@
 
             <button type="submit" class="btn btn-danger btn-lg" style="width: 100%; padding: 14px; margin-bottom: 5px;">Predict</button>
         </form>
+        
+        {% if warning_message %}
+            <!-- Display warning message if medications are recommended -->
+            <p style="color: red; font-size:l;">{{ warning_message }}</p>
+        {% endif %}
     </div>
 
     {% if predicted_disease %}
@@ -98,13 +104,14 @@
                 <!-- Add other buttons here -->
                 <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#descriptionModal" style="padding:4px;  margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F39334;color:black;">Description</button>
                 <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#precautionModal" style="padding:4px;  margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F39334;color:black;">Precaution</button>
-                <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#medicationsModal" style="padding:4px;  margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F39334;color:black;">Medications</button>
+                <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#medicationsModal" style="padding:4px;  margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F39334;color:black;">Medicine</button>
                 <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#workoutsModal" style="padding:4px;  margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F39334;color:black;">Workouts</button>
                 <button class="toggle-button" data-bs-toggle="modal" data-bs-target="#dietsModal" style="padding:4px;  margin: 5px 40px 5px 0; font-size:20px;font-weight:bold; width:140px; border-radius:5px; background:#F39334;color:black;">Diets</button>
             </div>
         </div>
     {% endif %}
-    
+
+
     <!-- Disease Modal -->
 <div class="modal fade" id="diseaseModal" tabindex="-1" aria-labelledby="diseaseModalLabel" aria-hidden="true">
     <div class="modal-dialog">
