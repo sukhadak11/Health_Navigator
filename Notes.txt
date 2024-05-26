@@ -1,0 +1,5 @@
+//How to run this project
+#pip install flask
+#pip install numpy
+#pip install pandas
+#pip install scikit-learn
