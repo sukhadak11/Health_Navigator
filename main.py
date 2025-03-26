@@ -76,6 +76,7 @@ def home():
 
     return render_template('index.html')
 
+
 @app.route("/login", methods=["POST"])
 def login():
     data = request.json

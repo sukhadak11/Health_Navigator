@@ -39,7 +39,7 @@
                 <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="">
             </div>
 
-            <a class="navbar-brand" href="#">Health Center</a>
+            <a class="navbar-brand" href="#">Health Navigator</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -53,12 +53,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/about">About</a>
                     </li>
-                    <li class="nav-item">
+                   <!---- <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/developer">Login</a>
-                    </li>
+                    </li> -->
                     <!--<li class="nav-item">
                         <a class="nav-link" href="/Login_signup.html">Login</a>
                     </li>-->
@@ -242,6 +242,7 @@
                         <option value="prognosis">Prognosis</option>
                         <!-- Add more symptoms here -->
                     </select>
+                      
                     <!-- <button type="submit">Submit</button> -->
                 <!-- </form> -->
             </div>
@@ -407,7 +408,11 @@
         </div>
     </div>
 
-
+     <script>
+        $(document).ready(function() {
+            $('#symptoms').select2();
+        });
+    </script>
     <script>
         const startSpeechRecognitionButton = document.getElementById('startSpeechRecognition');
         const symptomsInput = document.getElementById('symptoms');
