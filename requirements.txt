@@ -1,0 +1,12 @@
+streamlit>=1.32.0
+numpy
+pandas
+scikit-learn
+groq
+reportlab
+matplotlib
+pymongo
+dnspython
+requests
+beautifulsoup4
+opencv-python-headless
