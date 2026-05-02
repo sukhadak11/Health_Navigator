@@ -1,67 +1,115 @@
-# 🩺 Health Navigator
+# 🩺 AI Health Navigator
 
-**Health Navigator** is a web-based health recommendation system that assists users by analyzing symptoms, and suggesting appropriate workouts, diets, medications, and precautions using machine learning.
+## 📌 Project Overview
+
+AI Health Navigator is an intelligent healthcare web application that predicts possible diseases based on user symptoms and provides personalized health recommendations. It integrates Machine Learning and Generative AI to deliver a complete health assistance system.
 
 ---
 
 ## 🚀 Features
 
-- 🔍 **Symptom Analysis** – Accepts user-input symptoms and analyzes severity.
-- 💊 **Medication Recommendation** – Provides basic info and suggested dosages.
-- 🥗 **Diet Planning** – Suggests diet plans based on health conditions.
-- 🏋️‍♂️ **Workout Plans** – Recommends workouts according to user fitness needs.
-- ⚠️ **Precautions** – Offers health and safety advice for various conditions.
-- 🧠 **Machine Learning Integration** – Uses a trained ML model (`svc.pkl`) for predictions.
+* 🔍 Disease prediction using Machine Learning (SVC model)
+* 📊 Top 3 disease predictions with probability
+* 🧾 Detailed insights:
+
+  * Description
+  * Precautions
+  * Medications
+  * Diet plan
+  * Workout suggestions
+* 📄 PDF medical report generation
+* 🤖 AI Chatbot with RAG (Retrieval-Augmented Generation)
+* 🖼️ Image analysis (health-related)
+* 🎥 Video frame analysis
+* 🔗 URL-based health content summarization
+* 📁 Patient history tracking (MongoDB / session)
 
 ---
 
-## 🗂️ Project Structure
+## 🛠️ Tech Stack
 
-<pre>
+* **Frontend:** Streamlit
+* **Backend:** Python
+* **Machine Learning:** Scikit-learn (SVC Model)
+* **Generative AI:** Groq API (LLM)
+* **Database:** MongoDB (optional)
+* **Libraries:** Pandas, NumPy, Matplotlib, OpenCV, BeautifulSoup, ReportLab
+
+---
+
+## 📂 Project Structure
+
+```
 Health_Navigator/
-├── main.py # Main application file
-├── svc.pkl # Trained ML model (Support Vector Classifier)
-├── Medicine.ipynb # Notebook for medication recommendation logic
-├── Notes.txt # Development notes and ideas
-├── templates/ # HTML templates for UI
-├── static/ # Static files (CSS, JS, images)
-├── Symptom-severity.csv # Symptom severity dataset
-├── symptoms_df.csv # Symptom dataframe
-├── meds.csv # Medication data
-├── diets.csv # Diet recommendation data
-├── workout_df.csv # Workout data
-├── precautions_df.csv # Health precautions
-├── description.csv # Disease descriptions
-</pre>
-
----
-## 💡 How It Works
-- User inputs symptoms via web UI.
-
-- Backend uses the ML model (svc.pkl) to predict likely diseases.
-
-- Corresponding data (medications, diets, workouts, precautions) is fetched from .csv files.
-
-- Recommendations are displayed on the screen.
----
-## 📈 Machine Learning Model
-- Built using Support Vector Classification (SVC)
-
-- Trained on Training.csv with preprocessed health data
-
-- Serialized model saved as svc.pkl
----
+│
+├── main.py
+├── requirements.txt
+├── README.md
+├── svc.pkl
+├── description.csv
+├── precautions_df.csv
+├── medications.csv
+├── diets.csv
+├── workout_df.csv
+├── .streamlit/
+│   └── secrets.toml (not uploaded)
+```
 
 ---
 
-## ⚙️ Installation & Setup
+## ▶️ Run Locally
 
-1. **Clone the Repository**
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/sukhadak11/Health_Navigator.git
 cd Health_Navigator
+```
 
-python main.py
+### 2️⃣ Install dependencies
 
- 
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Add secrets
+
+Create file:
+
+```
+.streamlit/secrets.toml
+```
+
+Add:
+
+```toml
+GROQ_API_KEY = "your_api_key"
+MONGO_URI = "your_mongodb_uri"
+```
+
+### 4️⃣ Run the app
+
+```bash
+streamlit run main.py
+```
+
+---
+
+## 🌐 Live Demo
+
+👉 https://healthnavigator.streamlit.app
+*(Replace with your actual deployed link if different)*
+
+---
+
+## 🔐 Security Note
+
+* API keys are securely managed using Streamlit secrets
+* Sensitive data is excluded using `.gitignore`
+
+---
+
+## ⚠️ Disclaimer
+
+This application is for informational purposes only and does not replace professional medical advice. Always consult a qualified healthcare provider.
+
